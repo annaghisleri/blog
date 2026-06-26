@@ -13,39 +13,50 @@
             text-align: center;        /* Centraliza o texto */
             max-width: 800px;          /* Limita a largura máxima */
             margin: 0 auto;            /* Centraliza a caixa na tela */
-            padding: 16px;             /* Espaçamento interno (desgruda o texto das bordas) */
+            padding: 16px;             /* Espaçamento interno */
         }
 
         /* Estilos para o Conteúdo Principal */
         main {
             background-color: #FFFFFF; /* Fundo branco */
             color: #183C63;            /* Letras azul escuro */
-            text-align: center;        /* Centraliza o texto do post */
             max-width: 800px;          /* Limita a largura máxima */
             margin: 0 auto;            /* Centraliza a caixa na tela */
-            padding: 16px;             /* Espaçamento interno para conforto de leitura */
+            padding: 16px;             /* Espaçamento interno */
+            
+            /* Novidade: Alinha a imagem e a div de textos lado a lado */
+            display: flex;             
+            gap: 20px;                 /* Cria um espaço entre a imagem e o texto */
+            text-align: left;          /* Deixa o texto alinhado à esquerda no post para melhor leitura */
         }
 
         /* Estilos para a Imagem */
         img {
             width: 80px;               /* Define a largura fixa da imagem */
             height: 80px;              /* Define a altura fixa da imagem */
-            margin-bottom: 10px;       /* Cria um pequeno espaço abaixo da imagem */
+        }
+
+        /* Novidade: Estilo específico usando Classe para o nome do autor */
+        .artigo-autor {
+            font-weight: bold;         /* Deixa o texto em negrito */
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi e circuitos.">
         <h1>Meu blog tech</h1>
         <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
     </header>
 
     <main>
-        <h2>Meu primeiro post</h2>
-        <p>Por: Marcelo Paludetto</p>
-        <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+        <img src="imagem-blog.png" alt="Logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi e circuitos.">
+        
+        <div>
+            <h2>Meu primeiro post</h2>
+            <p class="artigo-autor">Por: Anna Lívia</p>
+            <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+        </div>
     </main>
 
 </body>
