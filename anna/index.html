@@ -4,73 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Blog Tech</title>
-    
-    <style>
-        /* Estilos para o Cabeçalho (Topo da página) */
-        header {
-            background-color: #183C63; /* Azul escuro */
-            color: #FFFFFF;            /* Letras brancas */
-            text-align: center;        /* Centraliza o texto */
-            max-width: 800px;          /* Limita a largura máxima */
-            margin: 0 auto;            /* Centraliza a caixa na tela */
-            padding: 16px;             /* Espaçamento interno */
-        }
-
-        /* Estilos para o Conteúdo Principal (Container dos posts) */
-        main {
-            background-color: #FFFFFF; /* Fundo branco */
-            color: #183C63;            /* Letras azul escuro */
-            max-width: 800px;          /* Limita a largura máxima */
-            margin: 0 auto;            /* Centraliza a caixa na tela */
-            padding: 16px;             /* Espaçamento interno */
-        }
-
-        /* Novidade: O Flexbox agora fica no article para alinhar os itens de cada post */
-        article {
-            display: flex;             
-            gap: 20px;                 /* Espaço entre a imagem e o bloco de texto */
-            text-align: left;          /* Alinha o texto à esquerda */
-            margin-bottom: 30px;       /* Espaçamento entre um post e outro */
-            padding-bottom: 20px;      /* Linha sutil de divisão opcional */
-            border-bottom: 1px solid #e0e0e0; 
-        }
-
-        /* Estilos para a Imagem */
-        img {
-            width: 80px;               /* Largura fixa */
-            height: 80px;              /* Altura fixa */
-        }
-
-        /* CLASSE CSS: Destaca apenas o nome do autor */
-        .artigo-autor {
-            font-weight: bold;         /* Texto em negrito */
-        }
-
-        /* Container para alinhar os botões lado a lado */
-        .reacoes-container {
-            display: flex;
-            gap: 10px;                 /* Distância entre um botão e outro */
-            margin-top: 15px;          /* Afasta os botões do texto do post */
-        }
-
-        /* Estilo para os Botões de Reação */
-        button {
-            background-color: #183C63; /* Fundo azul escuro */
-            color: white;              /* Cor do texto/contador */
-            border: none;              /* Remove as bordas padrão */
-            padding: 8px 12px;         /* Espaçamento interno do botão */
-            border-radius: 5px;        /* Deixa as bordinhas arredondadas */
-            cursor: pointer;           /* Transforma o mouse na mãozinha de clique */
-            font-size: 16px;           /* Aumenta o tamanho do emoji e texto */
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;                  /* Espaço entre o emoji e o número */
-        }
-
-        button:hover {
-            background-color: #245993; /* Muda de cor levemente ao passar o mouse */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -99,7 +33,13 @@
             <div>
                 <h2>Meu segundo post</h2>
                 <p class="artigo-autor">Por: Anna Lívia</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <p>Apesar de Alan Turing ser conhecido como pai da computação, ele não criou o primeiro computador.
+    Entre os primeiros computadores, um deles foi chamado Colossus projetado por Tommy Flowers durante a
+    Segunda Guerra Mundial e também, praticamente na mesma época, o ENIAC foi projetado por J. Presper
+    Eckert e John Mauchly.
+    <br><br>Embora o Colossus tenha funcionado antes como um "herói de guerra" especializado, o ENIAC é
+    frequentemente chamado de "pai" por ser o primeiro programável de uso geral. E aí, qual você
+    consideraria como o primeiro computador?</p>
                 <div class="reacoes-container">
                     <button>❤️ <span>0</span></button>
                     <button>👍 <span>0</span></button>
@@ -109,33 +49,8 @@
 
     </main>
 
-    <script>
-        // Seleciona todos os botões de reação da página
-        const botoes = document.querySelectorAll("button");
+    <script src="script.js"></script>
 
-        // O forEach passa por cada botão da página
-        botoes.forEach(function (botao) {
-            // Novidade: Cada botão ganha o seu próprio controle para saber se já foi clicado
-            let curtiu = false;
-
-            // Escuta o clique no botão atual
-            botao.addEventListener("click", botaoClicado);
-
-            function botaoClicado() {
-                console.log("fui clicado");
-                let texto = botao.querySelector("span");
-
-                // Novidade: Lógica condicional (Se não curtiu, adiciona. Se já curtiu, remove)
-                if (curtiu === false) {
-                    texto.textContent++;  // Soma 1 ao contador
-                    curtiu = true;        // Altera o estado para verdadeiro (bloqueia novos likes seguidos)
-                } else {
-                    texto.textContent--;  // Subtrai 1 do contador
-                    curtiu = false;       // Altera o estado de volta para falso (permite curtir de novo)
-                }
-            }
-        });
-    </script>
 
 </body>
 </html>
